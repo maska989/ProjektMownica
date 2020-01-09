@@ -32,7 +32,6 @@
             this.TextWysyl = new System.Windows.Forms.RichTextBox();
             this.TextLog = new System.Windows.Forms.RichTextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.cmdSluchaj = new System.Windows.Forms.Button();
             this.cmdWyslij = new System.Windows.Forms.Button();
             this.Polaczenie = new System.ComponentModel.BackgroundWorker();
@@ -67,35 +66,28 @@
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(688, 13);
+            this.txtPort.Location = new System.Drawing.Point(633, 13);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(100, 20);
             this.txtPort.TabIndex = 3;
             this.txtPort.Text = "8000";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(688, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
-            // 
             // cmdSluchaj
             // 
-            this.cmdSluchaj.Enabled = false;
-            this.cmdSluchaj.Location = new System.Drawing.Point(688, 67);
+            this.cmdSluchaj.Location = new System.Drawing.Point(633, 39);
             this.cmdSluchaj.Name = "cmdSluchaj";
-            this.cmdSluchaj.Size = new System.Drawing.Size(100, 23);
+            this.cmdSluchaj.Size = new System.Drawing.Size(155, 23);
             this.cmdSluchaj.TabIndex = 5;
-            this.cmdSluchaj.Text = "Connect";
+            this.cmdSluchaj.Text = "Czekaj na połączenie";
             this.cmdSluchaj.UseVisualStyleBackColor = true;
             this.cmdSluchaj.Click += new System.EventHandler(this.cmdSluchaj_Click);
             // 
             // cmdWyslij
             // 
-            this.cmdWyslij.Location = new System.Drawing.Point(688, 97);
+            this.cmdWyslij.Enabled = false;
+            this.cmdWyslij.Location = new System.Drawing.Point(633, 69);
             this.cmdWyslij.Name = "cmdWyslij";
-            this.cmdWyslij.Size = new System.Drawing.Size(100, 23);
+            this.cmdWyslij.Size = new System.Drawing.Size(155, 23);
             this.cmdWyslij.TabIndex = 6;
             this.cmdWyslij.Text = "Send";
             this.cmdWyslij.UseVisualStyleBackColor = true;
@@ -119,7 +111,6 @@
             this.ClientSize = new System.Drawing.Size(800, 351);
             this.Controls.Add(this.cmdWyslij);
             this.Controls.Add(this.cmdSluchaj);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.TextLog);
             this.Controls.Add(this.TextWysyl);
@@ -138,7 +129,6 @@
         private System.Windows.Forms.RichTextBox TextWysyl;
         private System.Windows.Forms.RichTextBox TextLog;
         private System.Windows.Forms.TextBox txtPort;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button cmdSluchaj;
         private System.Windows.Forms.Button cmdWyslij;
         private System.ComponentModel.BackgroundWorker Polaczenie;

@@ -19,15 +19,16 @@ namespace Mownica
         public frmSerwer()
         {
             InitializeComponent();
-        }
 
-        public void wyswietl(RichTextBox o,string tekst)
+        }
+        public void wyswietl(RichTextBox o, string tekst)
         {
             o.Focus();
             o.AppendText(tekst);
             o.ScrollToCaret();
             TextWysyl.Focus();
         }
+
 
         private void Polaczenie_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -41,7 +42,7 @@ namespace Mownica
                     if (klient != null) klient.Close();
                     listener.Stop();
                     czypolaczono = false;
-                    cmdSluchaj.Text = "czekaj na połączenie";
+                    cmdSluchaj.Text = "Czekaj na połączenie";
                     return;
                 }
             }
@@ -56,7 +57,7 @@ namespace Mownica
                 w.Write(komunikatySerwera.OK);
                 wyswietl(TextLog, "Połączono\n");
                 czypolaczono = true;
-                TextWysyl.Enabled = true;
+                cmdWyslij.Enabled = true;
                 Odbieranie.RunWorkerAsync();
             }
             else
@@ -74,7 +75,7 @@ namespace Mownica
             string tekst;
             while ((tekst = r.ReadString()) != komunikatyKlienta.rozlacz)
             {
-                wyswietl(TextOdczyt, "===Rozmówca===\n" + Text + '\n');
+                wyswietl(TextOdczyt, "===Rozmówca===\n" + tekst + '\n');
             }
             wyswietl(TextLog, "Rozlaczono\n");
             czypolaczono = false;
@@ -106,7 +107,7 @@ namespace Mownica
 
         private void cmdSluchaj_Click(object sender, EventArgs e)
         {
-            if(cmdSluchaj.Text == "Connect")
+            if(cmdSluchaj.Text == "Czekaj na połączenie")
             {
                 Polaczenie.RunWorkerAsync();
                 cmdSluchaj.Text = "Disconnect";
